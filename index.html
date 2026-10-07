@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Theo Remolques | Auxilio y Traslados de Vehículos 24hs en Buenos Aires</title>
+    
+    <meta name="description" content="Servicio de remolque y auxilio mecánico 24 horas. Realizamos todo tipo de traslados de vehículos con la máxima seguridad. Contacto directo por WhatsApp.">
+    
+    
+    <meta property="og:title" content="Theo Remolques | Auxilio 24hs">
+    <meta property="og:description" content="Servicio de grúa y traslados de vehículos. Contacto directo por WhatsApp.">
+    <meta property="og:type" content="website">
+    
+
+    <link rel="icon" href="image/favicon-32x32.webp" type="image/x-icon">
+    
+    <style>
+      :root {
+        --color-primary: #f37f21;
+        --color-secondary: #2cb4c1;
+        --color-background: #0D0D0D;
+        --color-background-light: #1a1a1a;
+        --color-text: #FFFFFF;
+        --color-text-muted: #AAAAAA;
+        --font-family: 'Roboto', sans-serif;
+        --navbar-height: 70px;
+        --transition-speed: 0.3s ease;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html { scroll-behavior: smooth; scroll-padding-top: var(--navbar-height); }
+      body {
+        font-family: var(--font-family);
+        background-color: var(--color-background);
+        line-height: 1.6;
+        color: var(--color-text);
+      }
+      img, video { max-width: 100%; height: auto; }
+      ul { list-style: none; }
+      a { text-decoration: none; color: var(--color-primary); }
+      .nav-logo:hover { color: var(--color-primary); }
+      h1.hero-title { color: var(--color-primary); }
+
+      /* --- Navbar Crítico --- */
+      .navbar {
+        top: 0; left: 0; width: 100%; position: fixed;
+        height: 110px; background-color: transparent;
+        z-index: 1000;
+        transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+      }
+      .navbar.scrolled {
+        background-color: var(--color-background-light);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, .3);
+      }
+      .navbar-container {
+        max-width: 1200px; height: 100%; margin: 0 auto;
+        padding: 0 20px; display: flex;
+        justify-content: space-between; align-items: center;
+      }
+      .nav-logo-image {
+        max-width: 100%; height: auto; max-height: 90px;
+        opacity: 0; transition: opacity var(--transition-speed);
+      }
+      .navbar.scrolled .nav-logo-image { opacity: 1; }
+      .nav-links { display: flex; gap: 25px; align-items: center; }
+      .nav-link {
+        color: var(--color-text-muted); font-weight: 700;
+        font-size: 1.5rem; text-transform: uppercase;
+        transition: var(--transition-speed);
+      }
+      .nav-link:hover { color: var(--color-text); }
+      .cta-nav {
+        color: var(--color-primary); border: 2px solid var(--color-primary);
+        padding: 8px 15px; border-radius: 5px;
+      }
+      .cta-nav:hover { background-color: var(--color-primary); color: var(--color-text); }
+      .nav-toggle {
+        display: none; background: 0 0; border: none;
+        cursor: pointer; flex-direction: column; gap: 5px;
+      }
+      .nav-toggle span {
+        transition: var(--transition-speed); display: block;
+        width: 25px; height: 3px; background-color: var(--color-text);
+      }
+
+      /* --- Hero Section Crítico --- */
+      .hero {
+        top: 0; left: 0; width: 100%; position: relative;
+        text-align: center; display: flex; align-items: center;
+        min-height: 100vh; justify-content: center;
+        padding: 20px; padding-top: var(--navbar-height);
+        background-color: var(--color-background);
+        background-image: url(image/fondo-hero.webp);
+        background-size: cover; background-position: center 50%;
+        background-repeat: no-repeat; border-bottom: none;
+      }
+      .hero::before {
+        content: ''; position: absolute; height: 100%;
+        background-color: rgba(0, 0, 0, .6);
+        z-index: 1; top: 0; left: 0; width: 100%;
+      }
+      .hero-content {
+        position: relative; text-align: center;
+        max-width: 1300px; width: 100%; z-index: 2;
+      }
+      .hero-header-split {
+        display: flex; align-items: center; gap: 30px;
+        width: 100%; justify-content: center;
+      }
+      .hero-header-logo { max-width: 450px; text-align: right; padding-right: 10px; }
+      .hero .logo { max-width: 100%; }
+      .hero-header-text {
+        max-width: 800px; padding: 40px 50px;
+        background-color: rgba(0, 0, 0, .75);
+        border-radius: 5px; text-align: left;
+      }
+      .hero-title {
+        text-decoration-color: var(--color-primary); text-decoration: underline;
+        font-size: 1.7rem; font-weight: 900;
+        margin-bottom: 10px; line-height: 1.2;
+        text-transform: uppercase;
+      }
+      .hero-subtitle {
+        font-size: 1.4rem; margin-bottom: 15px; color: var(--color-text);
+      }
+      .about-us-text {
+        font-size: 1.5rem; text-align: left; margin-top: 20px;
+        margin-bottom: 20px; background-color: transparent;
+        padding: 0; border-radius: 0; color: var(--color-text);
+      }
+      .seguridad {
+        text-decoration: underline; color: var(--color-primary); font-style: italic;
+      }
+      
+      /* --- Botones Críticos --- */
+      .cta-button {
+        text-transform: uppercase; font-size: 1.4rem;
+        display: inline-block;
+        background: linear-gradient(180deg, #f37f21 0, #d86e1c 100%);
+        color: var(--color-background); font-weight: 900;
+        padding: 15px 30px; border: none;
+        border-bottom: 4px solid #c8641a; border-radius: 5px;
+        margin-top: 20px; margin-bottom: 10px;
+        box-shadow: 0 4px 15px rgba(243, 127, 33, .4);
+        animation: 2.5s ease-in-out infinite pulse-shadow;
+        transition: transform .1s, box-shadow .1s, background .3s;
+      }
+      .cta-button:hover {
+        color: var(--color-text);
+        background: linear-gradient(180deg, #f58b34 0, #e07a2c 100%);
+        animation-play-state: paused;
+      }
+      .cta-button:active {
+        transform: translateY(2px); border-bottom-width: 2px; animation: none;
+      }
+      
+      /* --- Animaciones Críticas --- */
+      .fade-in { opacity: 0; transform: translateY(20px); transition: opacity .6s ease-out, transform .6s ease-out; }
+      .fade-in.is-visible { opacity: 1; transform: translateY(0); }
+      @keyframes pulse-shadow {
+        0%, 100% { box-shadow: 0 4px 15px rgba(243, 127, 33, .4); }
+        50% { box-shadow: 0 6px 25px rgba(243, 127, 33, .7); }
+      }
+
+      /* --- Media Queries Críticas --- */
+      @media (max-width: 1024px) {
+        .nav-link { font-size: 1.3rem; }
+      }
+      @media (max-width: 768px) {
+        .hero-header-split { flex-direction: column; gap: 20px; }
+        .hero-header-logo {
+          flex: auto; max-width: 600px; margin: 0 auto;
+          text-align: center; padding-right: 0;
+        }
+        .hero-header-text { padding: 20px; text-align: center; }
+        .hero-title { font-size: 2.2rem; text-align: center; }
+        .cta-button {
+          padding: 15px; width: 100%; max-width: 400px;
+          margin-left: auto; margin-right: auto;
+        }
+        .cta-button:active { transform: scale(.98); animation: none; }
+        .cta-button-text {
+          display: block; font-size: 1rem; font-weight: 400;
+          text-transform: uppercase; letter-spacing: .5px;
+        }
+        .cta-button-phone {
+          display: block; margin-top: 0; font-size: 2.2rem;
+          font-weight: 900; line-height: 1.1;
+        }
+        #nav-toggle { display: flex; z-index: 1001; margin-right: 40px; }
+        .nav-links {
+          position: fixed; top: 0; right: -100%; width: 70%;
+          height: 100vh; background-color: var(--color-background-light);
+          flex-direction: column; justify-content: center;
+          align-items: center; gap: 25px;
+          transition: right .4s ease-in-out;
+        }
+        .nav-links.nav-active { right: 0; }
+        .nav-link { font-size: 1.1rem; }
+        .nav-toggle.active span:first-child { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-toggle.active span:nth-child(2) { opacity: 0; }
+        .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+      }
+      @media (max-width: 420px) {
+        .hero-title { font-size: 1.9rem; }
+        .hero-subtitle { font-size: 1.1rem; }
+      }
+    </style>
+    
+    <link rel="stylesheet" href="style.css?v=2" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css?v=2"></noscript>
+
+    <link rel="preload" as="image" href="image/fondo-hero.webp">
+    
+    </head>
+    
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="./" aria-label="Volver al inicio - Theo Remolques">
+                <img src="image/logo.webp" alt="Logo Theo Remolques" class="nav-logo-image" width="150" height="40">
+            </a>
+            
+            <div class="nav-links" id="nav-links">
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#galeria" class="nav-link">Trabajos</a>
+                <a href="#cobertura" class="nav-link">Cobertura</a>
+                <a href="https://wa.me/541100000000?text=Hola%2C%20necesito%2C%20un%2C%20servicio%2C%20de%2C%20remolque." class="nav-link cta-nav">Contacto</a>
+            </div>
+            
+            <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    <a href="https://wa.me/541100000000?text=Hola%2C%20necesito%2C%20un%2C%20servicio%2C%20de%2C%20remolque." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <img src="image/whatsapp.svg" alt="Icono de WhatsApp" class="whatsapp-icon" width="90" height="90">
+    </a>
+
+   <header class="hero">
+    <div class="hero-content fade-in">
+        
+        <div class="hero-header-split">
+            
+            <div class="hero-header-logo">
+                <a href="./" aria-label="Volver al inicio - Theo Remolques Auxilio 24hs">
+                    <img src="image/logo-hero.webp" alt="Logo Theo Remolques - Auxilio 24hs" class="logo" width="400" height="150">
+                </a>
+            </div>
+
+            <div class="hero-header-text">
+                <h1 class="hero-title">SERVICIO DE REMOLQUE Y AUXILIO VIAL 24&nbsp;HS</h1>
+                <p class="hero-subtitle">Traslados de autos, camionetas y utilitarios.<br> Seguridad, confianza y el mejor precio.</p>
+                
+                <p class="about-us-text">
+                    Somos <strong class="seguridad">REMOLQUES&nbsp;THEO</strong>, una empresa con más de 10 años de experiencia brindando servicios 24 hs en todo lo relacionado al remolque de vehículos livianos y pesados.<br> Nuestra empresa dispone de camiones y maquinarias en excelentes condiciones para garantizar un traslado de vehículos de forma <br><strong class="seguridad">rápida, segura y eficiente.</strong>
+                </p>
+                <p class="about-us-text">
+                    Podemos transportar autos, motos, cuatriciclos, camionetas 4X4, utilitarios y siniestrados.
+                </p>
+
+                <a href="https://wa.me/541100000000?text=Hola%2C%20necesito%2C%20un%2C%20servicio%2C%20de%2C%20remolque." class="cta-button" target="_blank" rel="noopener noreferrer">
+                    <span class="cta-button-text">LLAMANOS 📞 :</span>
+                    <span class="cta-button-phone">11 0000-0000</span>
+                </a>
+            </div>
+            
+        </div>
+        
+        </div>
+</header>
+
+    <main>
+
+        <section id="servicios" class="container reveal">
+            <h2 class="section-title">NUESTROS SERVICIOS</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="image/audi.webp" alt="Icono de traslado de auto" class="service-icon" width="400" height="400" loading="lazy">
+                    <h3>Traslados de Vehículos</h3>
+                    <p>Trasladamos automotores incluyendo camionetas, autos, motos, cuatriciclos y siniestrados a cualquier punto con total seguridad.</p>
+                </div>
+                <div class="service-card">
+                    <img src="image/tractor.webp" alt="Icono de traslado de camioneta" class="service-icon" width="400" height="400" loading="lazy">
+                    <h3>Traslados de Maquinaria</h3>
+                    <p>Contamos con capacidad para el traslado de vehículos de gran porte y maquinaria pesada.</p>
+                </div>
+                <div class="service-card">
+                    <img src="image/camioneta.webp" alt="Icono de auxilio mecánico" class="service-icon" width="400" height="400" loading="lazy">
+                    <h3>Auxilio Mecánico 24hs</h3>
+                    <p>Nuestro servicio de auxilio está disponible las 24 horas del día, los 7 días de la semana, para resolver problemas como fallas de batería, pinchazos de neumáticos o averías menores en el camino. Llegamos rápidamente en CABA y GBA para asistirte.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="container reveal">
+            <h2 class="section-title">TRABAJOS REALIZADOS</h2>
+            <p class="section-subtitle">Tu confianza es nuestra prioridad. Mira nuestros traslados.</p>
+            <div class="gallery-grid">
+                <img src="image/grupo.webp" alt="Foto de remolque de auto deportivo" class="gallery-image" width="400" height="250" loading="lazy">
+                <img src="image/camion.webp" alt="Foto de auxilio a camioneta" class="gallery-image" width="400" height="250" loading="lazy">
+                <img src="image/pesado.webp" alt="Foto de grúa en servicio nocturno" class="gallery-image" width="400" height="250" loading="lazy">
+                <img src="image/auto-carrera.webp" alt="Foto de traslado de auto de carrera" class="gallery-image" width="400" height="250" loading="lazy">
+                <img src="image/tanque.webp" alt="Foto de traslado de tanque" class="gallery-image" width="400" height="250" loading="lazy">
+                </div>
+        </section>
+
+        <div class="container reveal">
+            <div class="horizontal-wrapper">
+                
+                <div id="cobertura" class="column-content">
+                    <h2 class="section-title">ZONAS DE COBERTURA</h2>
+                    <p class="section-subtitle">Atención principal en Capital Federal y GBA.</p>
+                    <ul class="coverage-list">
+                        <li>Capital Federal (CABA)</li>
+                        <li>Zona Oeste<br> (Ramos Mejía, Morón, Castelar, Ituzaingó)</li>
+                        <li>Zona Norte<br> (Vicente López, San Isidro, Tigre)</li>
+                        <li>Zona Sur<br> (Avellaneda, Lanús, Lomas de Zamora)</li>
+                        <li>¡Consultá por otros destinos!</li>
+                    </ul>
+                </div>
+    
+                <div id="medios-pago" class="column-content">
+                    <h2 class="section-title">MEDIOS DE PAGO</h2>
+                    <p class="section-subtitle">Simple y rápido.</p>
+                    <ul class="coverage-list">
+                        <li>EFECTIVO</li>
+                        <li>TRANSFERENCIA BANCARIA</li>
+                        <li>MERCADO PAGO</li>
+                    </ul>
+                </div>
+    
+            </div> </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; <span id="currentYear"></span> - Theo Remolques - Todos los derechos reservados. Tel: 11 0000-0000</p>
+        <p>Servicio de grúa y auxilio mecánico en Buenos Aires, Argentina.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
